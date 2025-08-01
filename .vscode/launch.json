@@ -1,0 +1,37 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch WhatsSocketConsole",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/WhatsSocketConsole/bin/Debug/net9.0/WhatsSocketConsole.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/WhatsSocketConsole",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "justMyCode": true,
+            "requireExactSource": false
+        },
+        {
+            "name": "Launch WhatsSocketConsole (External Terminal)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/WhatsSocketConsole/bin/Debug/net9.0/WhatsSocketConsole.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/WhatsSocketConsole",
+            "console": "externalTerminal",
+            "stopAtEntry": false,
+            "justMyCode": true,
+            "requireExactSource": false
+        },
+        {
+            "name": "Attach to Process",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+    ]
+}
