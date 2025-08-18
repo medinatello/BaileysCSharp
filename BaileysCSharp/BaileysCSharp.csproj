@@ -2,21 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <!-- Platform-specific protobuf configuration for .NET 9 -->
-  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX')) AND '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">
-    <!-- On Apple Silicon, disable automatic protobuf generation -->
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-  </PropertyGroup>
-
-  <!-- Re-enable compile items but exclude generated files -->
-  <ItemGroup Condition="$([MSBuild]::IsOSPlatform('OSX')) AND '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">
-    <Compile Include="**/*.cs" Exclude="bin/**;obj/**;WAProto.cs;WhisperTextProtocol.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Core\Events\NodeEventStore.cs" />
@@ -36,7 +25,7 @@
   <ItemGroup>
     <PackageReference Include="FFMpegCore" Version="5.1.0" />
     <PackageReference Include="Google.Protobuf" Version="3.27.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.66.0">
+    <PackageReference Include="Grpc.Tools" Version="2.64.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -45,24 +34,10 @@
     <PackageReference Include="SkiaSharp" Version="2.88.8" />
   </ItemGroup>
 
-  <!-- Protobuf generation for non-ARM64 macOS (.NET 9 compatible) -->
-  <ItemGroup Condition="!($([MSBuild]::IsOSPlatform('OSX')) AND '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64')">
+  <ItemGroup>
     <Protobuf Include="Proto\WAProto.proto" />
     <Protobuf Include="Proto\WhisperTextProtocol.proto" />
   </ItemGroup>
-
-  <!-- Manual protobuf generation for ARM64 macOS (.NET 9 compatible) -->
-  <Target Name="GenerateProtobufForArm64" BeforeTargets="BeforeBuild" Condition="$([MSBuild]::IsOSPlatform('OSX')) AND '$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture)' == 'Arm64'">
-    <Message Text="Generating protobuf files for ARM64 macOS using system protoc (.NET 9)..." Importance="high" />
-    <Exec Command="protoc --csharp_out=. Proto/WAProto.proto Proto/WhisperTextProtocol.proto" 
-          WorkingDirectory="$(MSBuildProjectDirectory)" 
-          Condition="Exists('/opt/homebrew/bin/protoc')" />
-    <ItemGroup>
-      <Compile Include="WAProto.cs" Condition="Exists('$(MSBuildProjectDirectory)/WAProto.cs')" />
-      <Compile Include="WhisperTextProtocol.cs" Condition="Exists('$(MSBuildProjectDirectory)/WhisperTextProtocol.cs')" />
-    </ItemGroup>
-  </Target>
-
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\mimeTypes.json" />
