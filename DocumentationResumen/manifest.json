@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "topics": [
+    {
+      "slug": "resumen-ejecutivo",
+      "dest": "10-resumen-ejecutivo-unificado.md#situación-actual",
+      "sources": [
+        {"path": "/DocumentationCodex/02-arquitectura-actual.md"},
+        {"path": "/DocumentationJules/02-arquitectura-actual.md"},
+        {"path": "/DocumentationCopilot/02-arquitectura-actual.md"}
+      ]
+    },
+    {
+      "slug": "flujo-conectar",
+      "dest": "22-flujos-unificados.md#conectar-y-autenticar",
+      "sources": [
+        {"path": "/DocumentationCodex/04-flujos-tecnicos.md#a"},
+        {"path": "/DocumentationJules/04-flujos-tecnicos.md#4.1"}
+      ]
+    }
+  ]
+}
