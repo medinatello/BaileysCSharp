@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "topics": [
+    {
+      "slug": "resumen-ejecutivo",
+      "dest": "10-resumen-ejecutivo-unificado.md#resumen-ejecutivo-unificado",
+      "sources": [
+        {"path": "../DocumentationCodex/01-resumen-ejecutivo.md"},
+        {"path": "../DocumentationJules/01-resumen-ejecutivo.md"},
+        {"path": "../DocumentationCopilot/01-resumen-ejecutivo.md"}
+      ]
+    },
+    {
+      "slug": "arquitectura",
+      "dest": "20-arquitectura-unificada.md#arquitectura-unificada",
+      "sources": [
+        {"path": "../DocumentationCodex/02-arquitectura-actual.md"},
+        {"path": "../DocumentationJules/02-arquitectura-actual.md"},
+        {"path": "../DocumentationCopilot/02-arquitectura-actual.md"}
+      ]
+    },
+    {
+      "slug": "tecnologias",
+      "dest": "21-tecnologias-unificadas.md#tecnologias-unificadas",
+      "sources": [
+        {"path": "../DocumentationCodex/03-tecnologias-usadas.md"},
+        {"path": "../DocumentationJules/03-tecnologias-usadas.md"},
+        {"path": "../DocumentationCopilot/03-tecnologias-usadas.md"}
+      ]
+    },
+    {
+      "slug": "flujos",
+      "dest": "22-flujos-unificados.md#flujos-unificados",
+      "sources": [
+        {"path": "../DocumentationCodex/04-flujos-tecnicos.md"},
+        {"path": "../DocumentationJules/04-flujos-tecnicos.md"}
+      ]
+    },
+    {
+      "slug": "casos-de-uso",
+      "dest": "23-casos-de-uso-unificados.md#casos-de-uso-unificados",
+      "sources": [
+        {"path": "../DocumentationCodex/05-casos-de-uso.md"},
+        {"path": "../DocumentationJules/05-casos-de-uso.md"}
+      ]
+    },
+    {
+      "slug": "mejoras",
+      "dest": "24-mejoras-y-recomendaciones-unificadas.md#mejoras-y-recomendaciones-unificadas",
+      "sources": [
+        {"path": "../DocumentationCodex/06-mejoras-errores-logs-telemetria.md"},
+        {"path": "../DocumentationJules/06-mejoras-errores-logs-telemetria.md"},
+        {"path": "../DocumentationCopilot/03-tecnologias-usadas.md"}
+      ]
+    },
+    {
+      "slug": "riesgos",
+      "dest": "25-riesgos-y-deuda-tecnica-unificados.md#riesgos-y-deuda-tecnica-unificados",
+      "sources": [
+        {"path": "../DocumentationCodex/09-riesgos-costos-y-deuda-tecnica.md"},
+        {"path": "../DocumentationJules/09-riesgos-costos-y-deuda-tecnica.md"}
+      ]
+    },
+    {
+      "slug": "plan-de-trabajo",
+      "dest": "26-plan-de-trabajo-y-sprints-unificado.md#plan-de-trabajo-y-sprints-unificado",
+      "sources": [
+        {"path": "../DocumentationCodex/08-plan-sprints-y-roadmap.md"},
+        {"path": "../DocumentationJules/08-plan-sprints-y-roadmap.md"}
+      ]
+    }
+  ]
+}
