@@ -1,7 +1,6 @@
 {
     "dotnet.defaultSolution": "BaileysCSharp.sln",
     "omnisharp.enableEditorConfigSupport": true,
-    "omnisharp.enableImportCompletion": true,
     "omnisharp.enableRoslynAnalyzers": true,
     "files.exclude": {
         "**/bin": true,
@@ -28,5 +27,6 @@
     },
     "files.associations": {
         "*.proto": "proto3"
-    }
+    },
+    "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true
 }

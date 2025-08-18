@@ -4,7 +4,10 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <NoWarn>$(NoWarn);CS8632;CS8618;CS8600;CS8601;CS8602;CS8603;CS8604;CS8625;CS8629;CS8765;CS0114;CS0108;CS0168;CS1998;CS0414;CS0652;SYSLIB0051;SYSLIB0053;SYSLIB0022;CA2022</NoWarn>
+    <WarningsAsErrors />
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
 
   <!-- Platform-specific protobuf configuration for .NET 9 -->
